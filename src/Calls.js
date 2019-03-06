@@ -1,23 +1,27 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
-import {RkButton, RkText, RkTabSet, RkTab, RkBadge } from 'react-native-ui-kitten';
+import { StyleSheet, Text, View, TouchableOpacity, Image, Picker, ToolbarAndroid } from 'react-native';
+import { RkButton, RkText, RkTabSet, RkTab, RkBadge } from 'react-native-ui-kitten';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
 class Calls extends React.Component {
+  state = {
+    language: ''
+  }
+  onActionSelected(position) {
+  if (position === 0) { // index of 'Settings'
+    showSettings();
+  }
+}
   render() {
+
     return (
           
-     <View style={{flex: 1}}>
-     <View style={styles.container}>
-       
-     <RkText>Tap to Call</RkText>
-     </View>
-     <TouchableOpacity>
-        <Image style = {styles.addImage} source={require('../assets/icon.png')} />
-     </TouchableOpacity>
-      
-     </View>
+   <ToolbarAndroid
+      logo={require('../assets/audio.png')}
+      title="AwesomeApp"
+      actions={[{title: 'Settings', icon: require('../assets/audio.png'), show: 'always'}]}
+      onActionSelected={this.onActionSelected} />
       
     );
   }
@@ -26,7 +30,7 @@ class Calls extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 200
@@ -37,8 +41,9 @@ const styles = StyleSheet.create({
     width: 70,   
     marginLeft: 260,
     marginTop: 90,
-    alignItems: 'flex-end'
-  },
-  
+    alignItems: 'flex-end',
+    elevation: 3,
+    backgroundColor: '#fff'
+  },  
 });
 export default Calls;

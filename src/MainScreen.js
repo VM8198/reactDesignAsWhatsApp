@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import Chats from './Chats';
 import Status from './status';
 import Calls from './Calls';
+
 RkTheme.setType('RkTabView', 'dark', {
   backgroundColor:'#075E54',
   color:'white',
@@ -20,32 +21,8 @@ RkTheme.setType('RkTabView', 'dark', {
   fontSize: 50
 });
 
-openMenu = () =>{
-  console.log("Menu");
-  return (
-      <View>
-        <FlatList
-          data={[
-            {key: 'Task 1'},
-            {key: 'Task 2'},
-            {key: 'Task 3'},
-            {key: 'Task 4'},
-            {key: 'Task 5'},
-          ]}
-          renderItem={({item}) => {
-              return(                
-                     <Text >{item.key}</Text>             
-              );
-            }
-          }
-        />
-      </View>
-      );
-}
 
-class MainScreen extends React.Component {
-
-  
+class MainScreen extends React.Component { 
 
   render() {
     return (
@@ -57,7 +34,7 @@ class MainScreen extends React.Component {
               <TouchableOpacity>
                 <Icon style={{marginLeft: 20}} name = "search" color='#fff' size={25}/>
                </TouchableOpacity>
-               <TouchableOpacity onPress = {()=>this.openMenu}>
+               <TouchableOpacity>
                 <Icon style={{marginLeft: 15}} name = "more-vert" color='#fff' size={25}/>
                </TouchableOpacity>                            
               </View>

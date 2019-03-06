@@ -8,11 +8,9 @@ import ChatScreen from './src/ChatScreen'
 class App extends React.Component {
 
   render() {
-    return (        
-        
+    return (         
        
-         <Routes />
-     
+         <Routes />     
       );
   }
 }

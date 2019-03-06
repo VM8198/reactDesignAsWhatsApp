@@ -10,7 +10,7 @@ class Status extends React.Component {
      <View style = {styles.mainContainer}>
      <TouchableOpacity>
      <View style = {styles.singleList}>  
-       <Image style = {styles.image} source={require('../assets/icon.png')} />
+        <Image style = {styles.image} source={require('../assets/download.jpeg')}/>
        <View style = {{flexDirection: 'column'}}>
          <Text style = {styles.name}>My Status</Text>
          <Text style = {styles.description}>Tap to add status update</Text>
@@ -24,7 +24,7 @@ class Status extends React.Component {
        </View>
        <TouchableOpacity>
      <View style = {styles.singleList}>  
-       <Image style = {styles.image} source={require('../assets/icon.png')} />
+        <Image style = {styles.image} source={require('../assets/download.jpeg')}/>
        <View style = {{flexDirection: 'column'}}>
          <Text style = {styles.name}>Name</Text>
          <Text style = {styles.description}>Description</Text>
